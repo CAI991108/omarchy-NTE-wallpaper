@@ -59,3 +59,17 @@ The config repo's `install.sh --wallpapers[=<theme>|all]` downloads
   the manifest returns 200, and every card's preview + download link resolves.
 - **Cross-repo change**: `omarchy-NTE/install.sh --dry-run --wallpapers` touches no
   network and writes nothing; a real run installs verified files flat and is idempotent.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues via the `gh` CLI; PRs are not a triage surface. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The default five triage roles, label strings equal to the role names. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `GLOSSARY.md` at the repo root, decisions in `docs/adr/`. See `docs/agents/domain.md`.
