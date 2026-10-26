@@ -3,12 +3,12 @@
 **Omarchy 的 NTE（异环）壁纸画廊**：在线预览、单张下载，或者按主题装进
 [omarchy-NTE](https://github.com/CAI991108/omarchy-NTE) 的 Omarchy 桌面。
 
-> **状态：初始化中。** 已接入 1 张默认壁纸（`01-nanally`），清单生成与画廊已跑通；
-> GitHub Pages 和 `omarchy-NTE` 的 `install.sh --wallpapers` 是下一步。
+> **状态：初始化中。** 已接入 1 张默认壁纸（`01-nanally`），清单生成与画廊已跑通，
+> 仓库已公开。GitHub Pages 和 `omarchy-NTE` 的 `install.sh --wallpapers` 是下一步。
 
 ## 画廊
 
-部署后地址：`https://cai991108.github.io/omarchy-NTE-wallpaper/`
+GitHub Pages 启用后的地址：`https://cai991108.github.io/omarchy-NTE-wallpaper/`
 
 本地预览（静态页，需要 HTTP，不能直接双击 `file://`）：
 
