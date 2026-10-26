@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>omarchy-NTE-wallpaper · 壁纸画廊</title>
+  <meta name="description" content="Omarchy 用的 NTE（异环）壁纸：在线预览、单张下载，或按主题装进 Omarchy。">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌃</text></svg>">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">omarchy-NTE · wallpapers</p>
+    <h1>壁纸画廊</h1>
+    <p class="lede">
+      预览、单张下载，或者用 <code>install.sh --wallpapers</code>（开发中）
+      一次装进 <a href="https://github.com/CAI991108/omarchy-NTE">omarchy-NTE</a> 的 Omarchy 桌面。
+    </p>
+    <p class="stats" id="stats" aria-live="polite"></p>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <div class="filters" id="filters" role="group" aria-label="按主题筛选"></div>
+      <label class="search">
+        <span class="sr-only">搜索壁纸</span>
+        <input id="search" type="search" placeholder="搜索标题 / ID…" autocomplete="off" spellcheck="false">
+      </label>
+    </div>
+
+    <section class="grid" id="grid" aria-label="壁纸列表"></section>
+    <p class="empty" id="empty" hidden>
+      还没有壁纸。把图放进 <code>wallpapers/&lt;theme&gt;/</code>，运行 <code>scripts/build.sh</code>。
+    </p>
+    <p class="empty error" id="error" hidden></p>
+  </main>
+
+  <footer>
+    <h2>装进 Omarchy</h2>
+    <pre><code>cd ~/omarchy-NTE
+./install.sh --wallpapers             # 当前主题
+./install.sh --wallpapers=catppuccin  # 指定主题</code></pre>
+    <p>
+      装完按 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Space</kbd>（Omarchy 3.8.2；
+      4.x 是 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>W</kbd>）挑选壁纸。
+      手动安装：把文件放进 <code>~/.config/omarchy/backgrounds/&lt;主题&gt;/</code>。
+    </p>
+    <p class="fine">
+      壁纸版权归原作者/发行方所有，来源见 <a href="CREDITS.md">CREDITS</a>；代码 MIT。
+      这个页面是纯静态的，数据来自 <a href="manifests/wallpapers.json"><code>manifests/wallpapers.json</code></a>。
+    </p>
+  </footer>
+
+  <dialog id="lightbox" aria-labelledby="lightbox-title">
+    <form method="dialog" class="dialog-close">
+      <button type="submit" aria-label="关闭">×</button>
+    </form>
+    <img id="lightbox-img" alt="">
+    <div class="dialog-body">
+      <h2 id="lightbox-title"></h2>
+      <p class="dialog-meta" id="lightbox-meta"></p>
+      <p class="dialog-actions">
+        <a id="lightbox-download" class="button" download>下载原图</a>
+        <a id="lightbox-source" class="button ghost" target="_blank" rel="noopener noreferrer" hidden>查看来源</a>
+      </p>
+    </div>
+  </dialog>
+
+  <script src="gallery.js" defer></script>
+</body>
+</html>

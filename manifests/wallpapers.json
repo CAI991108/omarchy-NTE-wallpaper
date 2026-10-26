@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "sets": {
+    "catppuccin": {
+      "label": "Catppuccin",
+      "wallpapers": [
+        {
+          "bundled": true,
+          "bytes": 4009753,
+          "credit": "待补",
+          "file": "wallpapers/catppuccin/01-nanally.jpeg",
+          "height": 2362,
+          "id": "01-nanally",
+          "preview": "previews/catppuccin/01-nanally.webp",
+          "sha256": "09c351ceb491dd5ed537a6e899884566dbf620e0c067394cbebf782f6ffce830",
+          "source": "",
+          "theme": "catppuccin",
+          "title": "娜娜莉",
+          "width": 4199
+        }
+      ]
+    }
+  }
+}
