@@ -17,6 +17,95 @@
           "theme": "catppuccin",
           "title": "娜娜莉",
           "width": 4199
+        },
+        {
+          "bundled": false,
+          "bytes": 1113323,
+          "credit": "待补",
+          "file": "wallpapers/catppuccin/02-nanally-sky.jpeg",
+          "height": 1184,
+          "id": "02-nanally-sky",
+          "preview": "previews/catppuccin/02-nanally-sky.webp",
+          "sha256": "9dd26e1e6eee575fb722b9327c9b1f344feb6cff66547b8f8972973305104891",
+          "source": "",
+          "theme": "catppuccin",
+          "title": "娜娜莉·晴空",
+          "width": 2036
+        },
+        {
+          "bundled": false,
+          "bytes": 1241975,
+          "credit": "待补",
+          "file": "wallpapers/catppuccin/03-nanally-dusk.jpeg",
+          "height": 2496,
+          "id": "03-nanally-dusk",
+          "preview": "previews/catppuccin/03-nanally-dusk.webp",
+          "sha256": "b6248333791cbc3025d2005b3e428c91cc77d7e0337cae2ad49c657b3b027c24",
+          "source": "",
+          "theme": "catppuccin",
+          "title": "娜娜莉·黄昏",
+          "width": 3648
+        },
+        {
+          "bundled": false,
+          "bytes": 1396985,
+          "credit": "待补",
+          "file": "wallpapers/catppuccin/04-nanally-rain.jpeg",
+          "height": 2496,
+          "id": "04-nanally-rain",
+          "preview": "previews/catppuccin/04-nanally-rain.webp",
+          "sha256": "a1604d2db64d6e4fa41915265448a1b01790cf06d36b580a8b17cae0286ae59c",
+          "source": "",
+          "theme": "catppuccin",
+          "title": "娜娜莉·雨",
+          "width": 3648
+        },
+        {
+          "bundled": false,
+          "bytes": 1375251,
+          "credit": "待补",
+          "file": "wallpapers/catppuccin/05-requiem-rain.jpeg",
+          "height": 2496,
+          "id": "05-requiem-rain",
+          "preview": "previews/catppuccin/05-requiem-rain.webp",
+          "sha256": "de74aa08514be8303571a90a63b4eead59a0d758da487fa837a0d8ba599f8d28",
+          "source": "",
+          "theme": "catppuccin",
+          "title": "Requiem·雨",
+          "width": 3648
+        }
+      ]
+    },
+    "catppuccin-latte": {
+      "label": "Catppuccin Latte",
+      "wallpapers": [
+        {
+          "bundled": false,
+          "bytes": 2376865,
+          "credit": "待补",
+          "file": "wallpapers/catppuccin-latte/01-nte-chibi.jpeg",
+          "height": 2160,
+          "id": "01-nte-chibi",
+          "preview": "previews/catppuccin-latte/01-nte-chibi.webp",
+          "sha256": "e2180802828a7a438c767a8833fabecbc5469611baf3732323f4aeb410e34a73",
+          "source": "",
+          "theme": "catppuccin-latte",
+          "title": "异环·Q版群像",
+          "width": 3840
+        },
+        {
+          "bundled": false,
+          "bytes": 3365558,
+          "credit": "待补",
+          "file": "wallpapers/catppuccin-latte/02-nte-sakura.jpeg",
+          "height": 2160,
+          "id": "02-nte-sakura",
+          "preview": "previews/catppuccin-latte/02-nte-sakura.webp",
+          "sha256": "d3adc24f1db1c83879c9e20205b31217bda0625ce762cfb4dcce5a6a1cbc61cf",
+          "source": "",
+          "theme": "catppuccin-latte",
+          "title": "异环·樱花群像",
+          "width": 3840
         }
       ]
     }
