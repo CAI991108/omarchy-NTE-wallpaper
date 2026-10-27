@@ -10,6 +10,6 @@
 | `02-nanally-sky` | 娜娜莉·晴空 | 待补 | — |
 | `03-nanally-dusk` | 娜娜莉·黄昏 | 待补 | — |
 | `04-nanally-rain` | 娜娜莉·雨 | 待补 | — |
-| `05-requiem-rain` | Requiem·雨 | 待补 | — |
+| `05-requiem-rain` | 安魂曲·雨 | 待补 | — |
 | `01-nte-chibi` | 异环·Q版群像 | 待补 | — |
-| `02-nte-sakura` | 异环·樱花群像 | 待补 | — |
+| `02-nte-sakura` | 异环·全家福 | 待补 | — |
