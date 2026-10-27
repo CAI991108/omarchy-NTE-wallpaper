@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="99" height="20" role="img" aria-label="pages: live">
+<title>pages: live</title>
+<linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-opacity=".12"/></linearGradient>
+<clipPath id="r"><rect width="99" height="20" rx="3" fill="#fff"/></clipPath>
+<g clip-path="url(#r)">
+<rect width="57" height="20" fill="#4b5563"/>
+<rect x="57" width="42" height="20" fill="#2da44e"/>
+<rect width="99" height="20" fill="url(#s)"/>
+</g>
+<g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
+<text x="28.5" y="14">pages</text><text x="78" y="14">live</text>
+</g>
+</svg>

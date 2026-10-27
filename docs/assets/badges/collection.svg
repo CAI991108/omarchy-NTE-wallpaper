@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="174" height="20" role="img" aria-label="7 wallpapers · 2 themes">
+<title>7 wallpapers · 2 themes</title>
+<linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-opacity=".12"/></linearGradient>
+<rect width="174" height="20" rx="3" fill="#545d68"/>
+<rect width="174" height="20" rx="3" fill="url(#s)"/>
+<text x="87" y="14" fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">7 wallpapers · 2 themes</text>
+</svg>
