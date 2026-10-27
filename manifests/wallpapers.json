@@ -7,7 +7,7 @@
         {
           "bundled": true,
           "bytes": 4009753,
-          "credit": "待补",
+          "credit": "原作者未知（塔吉多·同人二创）",
           "file": "wallpapers/catppuccin/01-nanally.jpeg",
           "height": 2362,
           "id": "01-nanally",
@@ -21,7 +21,7 @@
         {
           "bundled": false,
           "bytes": 1113323,
-          "credit": "待补",
+          "credit": "原作者未知（塔吉多·同人二创）",
           "file": "wallpapers/catppuccin/02-nanally-sky.jpeg",
           "height": 1184,
           "id": "02-nanally-sky",
@@ -35,7 +35,7 @@
         {
           "bundled": false,
           "bytes": 1241975,
-          "credit": "待补",
+          "credit": "原作者未知（塔吉多·同人二创）",
           "file": "wallpapers/catppuccin/03-nanally-dusk.jpeg",
           "height": 2496,
           "id": "03-nanally-dusk",
@@ -49,7 +49,7 @@
         {
           "bundled": false,
           "bytes": 1396985,
-          "credit": "待补",
+          "credit": "原作者未知（塔吉多·同人二创）",
           "file": "wallpapers/catppuccin/04-nanally-rain.jpeg",
           "height": 2496,
           "id": "04-nanally-rain",
@@ -63,7 +63,7 @@
         {
           "bundled": false,
           "bytes": 1375251,
-          "credit": "待补",
+          "credit": "原作者未知（塔吉多·同人二创）",
           "file": "wallpapers/catppuccin/05-requiem-rain.jpeg",
           "height": 2496,
           "id": "05-requiem-rain",
@@ -82,13 +82,13 @@
         {
           "bundled": false,
           "bytes": 2376865,
-          "credit": "待补",
+          "credit": "异环官方",
           "file": "wallpapers/catppuccin-latte/01-nte-chibi.jpeg",
           "height": 2160,
           "id": "01-nte-chibi",
           "preview": "previews/catppuccin-latte/01-nte-chibi.webp",
           "sha256": "e2180802828a7a438c767a8833fabecbc5469611baf3732323f4aeb410e34a73",
-          "source": "",
+          "source": "https://www.bilibili.com/opus/1259735399978237974",
           "theme": "catppuccin-latte",
           "title": "异环·Q版群像",
           "width": 3840
@@ -96,13 +96,13 @@
         {
           "bundled": false,
           "bytes": 3365558,
-          "credit": "待补",
+          "credit": "异环官方",
           "file": "wallpapers/catppuccin-latte/02-nte-sakura.jpeg",
           "height": 2160,
           "id": "02-nte-sakura",
           "preview": "previews/catppuccin-latte/02-nte-sakura.webp",
           "sha256": "d3adc24f1db1c83879c9e20205b31217bda0625ce762cfb4dcce5a6a1cbc61cf",
-          "source": "",
+          "source": "https://www.bilibili.com/opus/1259735399978237974",
           "theme": "catppuccin-latte",
           "title": "异环·全家福",
           "width": 3840
