@@ -10,6 +10,48 @@ Wallpaper gallery and manifest for Omarchy. The **images + metadata** live here;
 - `docs/adr/` — why this repo exists separately and where binaries live.
 - `README.md` — public usage and the add-a-wallpaper recipe.
 
+## If the working copy is a partial clone
+
+This repo carries ~15 MB of images, so it is easy to end up with a **blobless partial
+clone** (`git clone --filter=blob:none`). Symptom seen on 2026-10-27:
+
+- `git commit` appears to hang. The process tree shows an unexpected
+  `git ... fetch origin --no-tags --no-write-fetch-head --filter=blob:none --stdin`
+  spawned by the commit, slowly pulling objects instead of failing.
+- `git write-tree` stalls the same way: it will not write a tree that references
+  blobs the clone does not have, so it tries to fetch them first.
+- The killed fetch leaves `.git/index.lock` behind, and every later commit fails with
+  `Another git process seems to be running in this repository`.
+
+Commits `719c2ee` and `907bf14` were made with this workaround, which never fetches:
+
+```bash
+git add <paths>                                   # writes the new blobs from the worktree
+tree=$(git write-tree --missing-ok)               # skip the "all blobs present" check
+commit=$(git commit-tree "$tree" -p HEAD -F <msgfile>)
+git update-ref refs/heads/main "$commit"
+git push origin main                              # only the objects the remote lacks are sent
+```
+
+The pushed commit is complete: the only blobs it adds are the ones `git add` just wrote,
+and every other blob already exists on the remote.
+
+Root fix, on a healthy connection:
+
+```bash
+# simplest — re-clone without a filter
+git clone https://github.com/CAI991108/omarchy-NTE-wallpaper.git
+
+# or convert this checkout in place, then verify nothing is missing
+git config --unset remote.origin.partialclonefilter
+git config --unset remote.origin.promisor
+git fetch --refetch origin
+git rev-list --objects --missing=print --all | head   # must print nothing
+```
+
+A full clone answers `git config --get remote.origin.partialclonefilter` with an empty
+string; if it prints `blob:none`, you are still on a partial clone.
+
 ## Commands
 
 | Command | Purpose |

@@ -1,9 +1,9 @@
 # omarchy-NTE-wallpaper
 
-<blockquote align="center">
+<p align="center">
 <strong>NTE wallpapers for Omarchy.</strong> Seven originals, two themes, one command.<br>
 七张《异环》壁纸，两个主题，一条命令装进 Omarchy 的壁纸选择器。
-</blockquote>
+</p>
 
 <p align="center">
   <a href="https://cai991108.github.io/omarchy-NTE-wallpaper/"><img src="docs/assets/badges/pages.svg" alt="pages: live"></a>
@@ -28,8 +28,6 @@ cd ~/omarchy-NTE && ./install.sh --wallpapers=catppuccin
 <https://cai991108.github.io/omarchy-NTE-wallpaper/>
 
 按主题筛选、搜索、单张下载，不用 clone 本仓库。
-
-<img src="docs/assets/gallery.webp" width="1000" alt="壁纸画廊：主题筛选、搜索、单张下载">
 
 ## 主题
 
