@@ -1,18 +1,18 @@
 # omarchy-NTE-wallpaper
 
-**NTE wallpapers for Omarchy.** Seven originals, two themes, one command.
-
+<blockquote align="center">
+<strong>NTE wallpapers for Omarchy.</strong> Seven originals, two themes, one command.<br>
 七张《异环》壁纸，两个主题，一条命令装进 Omarchy 的壁纸选择器。
+</blockquote>
 
-[![pages](docs/assets/badges/pages.svg)](https://cai991108.github.io/omarchy-NTE-wallpaper/) [![license](docs/assets/badges/license.svg)](LICENSE) [![7 wallpapers · 2 themes](docs/assets/badges/collection.svg)](manifests/wallpapers.tsv)
+<p align="center">
+  <a href="https://cai991108.github.io/omarchy-NTE-wallpaper/"><img src="docs/assets/badges/pages.svg" alt="pages: live"></a>
+  <a href="LICENSE"><img src="docs/assets/badges/license.svg" alt="license: MIT"></a>
+  <a href="manifests/wallpapers.tsv"><img src="docs/assets/badges/collection.svg" alt="7 wallpapers · 2 themes"></a>
+</p>
 
-<p>
-  <img src="previews/catppuccin/01-nanally.webp" width="330" alt="娜娜莉">
-  <img src="previews/catppuccin-latte/01-nte-chibi.webp" width="330" alt="异环·Q版群像">
-  <img src="previews/catppuccin-latte/02-nte-sakura.webp" width="330" alt="异环·全家福">
-  <img src="previews/catppuccin/03-nanally-dusk.webp" width="330" alt="娜娜莉·黄昏">
-  <img src="previews/catppuccin/04-nanally-rain.webp" width="330" alt="娜娜莉·雨">
-  <img src="previews/catppuccin/05-requiem-rain.webp" width="330" alt="安魂曲·雨">
+<p align="center">
+  <a href="https://cai991108.github.io/omarchy-NTE-wallpaper/"><img src="docs/assets/hero.webp" width="1008" alt="六张壁纸预览：娜娜莉、异环·Q版群像、异环·全家福、娜娜莉·黄昏、娜娜莉·雨、安魂曲·雨"></a>
 </p>
 
 ## 安装
@@ -21,15 +21,15 @@
 cd ~/omarchy-NTE && ./install.sh --wallpapers=catppuccin
 ```
 
-只装壁纸，不动其余配置。`--wallpapers` 装当前主题，`--wallpapers=all` 装全部主题；先看计划不联网就加 `--dry-run`。
+`--wallpapers` 装当前主题，`--wallpapers=all` 装全部主题；先看计划不联网就加 `--dry-run`。
 
 ## 画廊
 
-<img src="docs/assets/gallery.webp" width="1000" alt="壁纸画廊：主题筛选、搜索、单张下载">
-
 <https://cai991108.github.io/omarchy-NTE-wallpaper/>
 
-按主题筛选、搜索、单张下载，不用 clone 本仓库。页面只加载 640px 缩略图，点开大图或下载才取原图。
+按主题筛选、搜索、单张下载，不用 clone 本仓库。
+
+<img src="docs/assets/gallery.webp" width="1000" alt="壁纸画廊：主题筛选、搜索、单张下载">
 
 ## 主题
 
@@ -40,9 +40,9 @@ cd ~/omarchy-NTE && ./install.sh --wallpapers=catppuccin
 
 装好后按 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Space</kbd> 在桌面端切换（Omarchy 3.8.2；4.x 为 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>W</kbd>）。
 
-## 它怎么工作
+## 仓库怎么工作
 
-本仓库只放图片与清单，部署逻辑在 [omarchy-NTE](https://github.com/CAI991108/omarchy-NTE)。两者之间只有一份接口：`manifests/wallpapers.tsv`。
+本仓库只放图片与清单，部署逻辑在 [omarchy-NTE](https://github.com/CAI991108/omarchy-NTE)。两者之间有一份接口：`manifests/wallpapers.tsv`。
 
 ```text
 omarchy-NTE/install.sh --wallpapers=catppuccin
