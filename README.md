@@ -4,7 +4,7 @@
 [omarchy-NTE](https://github.com/CAI991108/omarchy-NTE) 的 Omarchy 桌面。
 
 > **状态：画廊已上线。** 已接入 7 张壁纸（`catppuccin` 5 张、`catppuccin-latte` 2 张），
-> Pages 已部署（根目录 / `main`）。`omarchy-NTE` 的 `install.sh --wallpapers` 是下一步。
+> Pages 已部署（根目录 / `main`），`omarchy-NTE` 的 `install.sh --wallpapers` 已可用。
 
 ## 画廊
 
@@ -32,12 +32,17 @@ omarchy theme bg set ~/.config/omarchy/backgrounds/catppuccin/01-nanally.jpeg
 装完按 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Space</kbd>（Omarchy 3.8.2；
 4.x 是 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>W</kbd>）在桌面端切换。
 
-**一键安装**（配合 omarchy-NTE，开发中）：
+**一键安装**（配合 [omarchy-NTE](https://github.com/CAI991108/omarchy-NTE)）：
 
 ```bash
 cd ~/omarchy-NTE
-./install.sh --wallpapers=catppuccin
+./install.sh --wallpapers=catppuccin   # 指定主题
+./install.sh --wallpapers              # 当前主题
+./install.sh --wallpapers=all          # 全部主题
 ```
+
+安装器按 `manifests/wallpapers.tsv` 逐张校验 sha256 后扁平装进
+`~/.config/omarchy/backgrounds/<theme>/`；网络失败只警告，不会中断配置部署。
 
 ## 加一张壁纸
 
