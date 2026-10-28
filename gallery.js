@@ -34,6 +34,8 @@
     // read them back for the badge; they show under Pages in the dashboard.
     window.goatcounter.count({ path: `download-${item.id}`, title: `Download ${item.id}` });
     window.goatcounter.count({ path: 'download', title: 'Download' });
+    // The hit is persisted within ~10 s; refresh the badge after that.
+    setTimeout(maybeShowCounts, 15000);
   }
 
   async function counter(path) {
@@ -48,20 +50,43 @@
 
   // Public counters need "Allow adding visitor counts" in GoatCounter's site
   // settings; if that is off, or the request fails, the badge stays hidden.
+  //
+  // The aggregate `/download` path is deliberately not read back: its public
+  // counter can get a stale 404 cached for hours before the first download.
+  // Per-wallpaper `/download-<id>` counters are fresh and sum to the total.
   async function showPopularity() {
-    if (!GC_BASE || !popularity) return;
-    // Use the exact path count.js recorded; event paths have no leading slash.
+    if (!GC_BASE || !popularity || !state.items.length) return;
+    // Use the exact path count.js recorded (it may have a trailing slash).
     const pagePath = window.goatcounter?.get_data?.().p || location.pathname;
-    const [views, downloads] = await Promise.allSettled([
+    const ids = state.items.map((item) => item.id);
+    const results = await Promise.allSettled([
       counter(pagePath),
-      counter('download').catch(() => counter('/download')),
+      ...ids.map((id) => counter(`/download-${id}`)),
     ]);
+    const views = results[0];
     const parts = [];
     if (views.status === 'fulfilled') parts.push(`浏览 ${views.value} 次`);
-    if (downloads.status === 'fulfilled') parts.push(`下载 ${downloads.value} 次`);
+    let total = 0;
+    let anyDownloads = false;
+    for (const result of results.slice(1)) {
+      if (result.status !== 'fulfilled') continue;
+      anyDownloads = true;
+      total += Number(String(result.value).replace(/,/g, '')) || 0;
+    }
+    if (anyDownloads) parts.push(`下载 ${total} 次`);
     if (!parts.length) return;
     popularity.textContent = parts.join(' · ');
     popularity.hidden = false;
+  }
+
+  let dataLoaded = false;
+  let analyticsLoaded = false;
+  let popularityBusy = false;
+
+  function maybeShowCounts() {
+    if (!dataLoaded || !analyticsLoaded || popularityBusy || !GC_BASE) return;
+    popularityBusy = true;
+    showPopularity().finally(() => { popularityBusy = false; });
   }
 
   function initAnalytics() {
@@ -71,7 +96,10 @@
     // Vendored same-origin: gc.zgo.at is unreachable on some networks.
     script.src = 'vendor/goatcounter-count.js';
     script.dataset.goatcounter = `${GC_BASE}/count`;
-    script.addEventListener('load', showPopularity);
+    script.addEventListener('load', () => {
+      analyticsLoaded = true;
+      maybeShowCounts();
+    });
     document.head.append(script);
   }
 
@@ -247,6 +275,8 @@
 
       buildFilters();
       render();
+      dataLoaded = true;
+      maybeShowCounts();
     } catch (err) {
       error.hidden = false;
       error.textContent =

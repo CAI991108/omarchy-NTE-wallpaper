@@ -37,10 +37,11 @@ cd ~/omarchy-NTE && ./install.sh --wallpapers=catppuccin
 `zijincai.goatcounter.com`。页头徽章读取公开计数，需站点设置里打开
 “Allow adding visitor counts”。
 
-下载点击按普通路径记录（`download`、`download-<id>`），所以在 GoatCounter 后台的 **Pages**
-里看，不在 Events 里；这样公开计数接口才能把总数读回页头。统计的是**点击“下载”链接**，不是
-完成的传输：`curl`、`./install.sh --wallpapers` 和直链打开都不会计入。GoatCounter 默认按访问
-会话去重（8 小时），可在站点设置里关掉 sessions 改为原始加载次数。
+下载点击按普通路径记录（`download`、`download-<id>`），在 GoatCounter 后台的 **Pages** 里看。
+页头的“下载 N 次”由各图的 `download-<id>` 计数相加得到（聚合 `/download` 只用于后台），
+这样不用等聚合路径的公开计数缓存。统计的是**点击“下载”链接**，不是完成的传输：`curl`、
+`./install.sh --wallpapers` 和直链打开都不会计入。GoatCounter 默认按访问会话去重（8 小时），
+可在站点设置里关掉 sessions 改为原始加载次数。
 
 ## 主题
 
