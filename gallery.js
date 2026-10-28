@@ -40,7 +40,9 @@
   }
 
   async function counter(path) {
-    const response = await fetch(`${GC_BASE}/counter/${encodeURIComponent(path)}.json`, {
+    // GoatCounter stores paths lower-cased; an upper-case path 404s even when it
+    // has data. count.js sends the page path as-is, so normalise it here.
+    const response = await fetch(`${GC_BASE}/counter/${encodeURIComponent(path.toLowerCase())}.json`, {
       cache: 'no-store',
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
