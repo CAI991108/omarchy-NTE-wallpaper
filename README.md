@@ -29,6 +29,16 @@ cd ~/omarchy-NTE && ./install.sh --wallpapers=catppuccin
 
 按主题筛选、搜索、单张下载，不用 clone 本仓库。
 
+## 统计
+
+页面浏览和“下载”点击用 [GoatCounter](https://www.goatcounter.com/)（无 cookie，约 3.5 KB）。
+`gallery.js` 顶部的 `GOATCOUNTER_CODE` 为空时完全关闭（默认不发任何请求）；填入站点 code，
+并在 GoatCounter 站点设置里打开 “Allow adding visitor counts”，页头才会显示总浏览/总下载。
+
+下载数统计的是**点击“下载”链接**，不是完成的传输：`curl`、`./install.sh --wallpapers`
+和直链打开都不会计入。GoatCounter 默认按访问会话去重（8 小时），可在站点设置里关掉 sessions
+改为原始加载次数。
+
 ## 主题
 
 | 主题目录 | 张数 | 分辨率 | 内容 |

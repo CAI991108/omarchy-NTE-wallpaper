@@ -5,6 +5,7 @@
   const filters = document.getElementById('filters');
   const search = document.getElementById('search');
   const stats = document.getElementById('stats');
+  const popularity = document.getElementById('popularity');
   const empty = document.getElementById('empty');
   const error = document.getElementById('error');
   const dialog = document.getElementById('lightbox');
@@ -15,10 +16,62 @@
   const dialogSource = document.getElementById('lightbox-source');
 
   const state = { items: [], theme: 'all', query: '' };
+  let dialogItem = null;
 
   const MB = 1024 * 1024;
   const fmtMB = (bytes) => `${(bytes / MB).toFixed(1).replace(/\.0$/, '')} MB`;
   const basename = (path) => path.split('/').pop();
+
+  // ── analytics (GoatCounter, optional) ──────────────────────────────────────
+  // Site code from https://www.goatcounter.com/signup (e.g. 'cai991108').
+  // Empty string = analytics fully off: no script tag, no network requests.
+  const GOATCOUNTER_CODE = '';
+  const GC_BASE = GOATCOUNTER_CODE ? `https://${GOATCOUNTER_CODE}.goatcounter.com` : '';
+
+  function trackDownload(item) {
+    if (!GC_BASE || !window.goatcounter?.count) return;
+    // Per-wallpaper event, plus an aggregate event used for the total badge.
+    window.goatcounter.count({
+      path: `download-${item.id}`,
+      title: `Download ${item.id}`,
+      event: true,
+    });
+    window.goatcounter.count({ path: 'download', title: 'Download', event: true });
+  }
+
+  async function counter(path) {
+    const response = await fetch(`${GC_BASE}/counter/${encodeURIComponent(path)}.json`, {
+      cache: 'no-store',
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return (await response.json()).count;
+  }
+
+  // Public counters need "Allow adding visitor counts" in GoatCounter's site
+  // settings; if that is off, or the request fails, the badge stays hidden.
+  async function showPopularity() {
+    if (!GC_BASE || !popularity) return;
+    const [views, downloads] = await Promise.allSettled([
+      counter(location.pathname),
+      counter('download'),
+    ]);
+    const parts = [];
+    if (views.status === 'fulfilled') parts.push(`浏览 ${views.value} 次`);
+    if (downloads.status === 'fulfilled') parts.push(`下载 ${downloads.value} 次`);
+    if (!parts.length) return;
+    popularity.textContent = parts.join(' · ');
+    popularity.hidden = false;
+  }
+
+  function initAnalytics() {
+    if (!GC_BASE) return;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://gc.zgo.at/count.js';
+    script.dataset.goatcounter = `${GC_BASE}/count`;
+    script.addEventListener('load', showPopularity);
+    document.head.append(script);
+  }
 
   function labelFor(theme) {
     const item = state.items.find((i) => i.theme === theme);
@@ -126,6 +179,7 @@
     download.href = item.file;
     download.download = basename(item.file);
     download.textContent = '下载';
+    download.addEventListener('click', () => trackDownload(item));
 
     const details = document.createElement('button');
     details.type = 'button';
@@ -140,6 +194,7 @@
   }
 
   function openDialog(item) {
+    dialogItem = item;
     dialogImg.src = item.file;
     dialogImg.alt = item.title;
     dialogTitle.textContent = item.title;
@@ -163,6 +218,10 @@
   // Click on the backdrop (the dialog element itself, not its children) closes it.
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog) dialog.close();
+  });
+
+  dialogDownload.addEventListener('click', () => {
+    if (dialogItem) trackDownload(dialogItem);
   });
 
   search.addEventListener('input', () => {
@@ -196,4 +255,5 @@
   }
 
   load();
+  initAnalytics();
 })();

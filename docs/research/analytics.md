@@ -1,6 +1,7 @@
 # Analytics for the wallpaper gallery
 
-**Status:** research note, no code changed. **Accessed:** 2026-10-28.
+**Status:** researched 2026-10-28; **GoatCounter chosen** (2026-10-28) and wired in
+`gallery.js` (`GOATCOUNTER_CODE`, off until the site code is set).
 **Question:** which analytics provider should count (a) page views and (b) per-wallpaper
 download clicks on a static GitHub Pages gallery, while staying privacy-friendly,
 free/cheap, and low-maintenance?
