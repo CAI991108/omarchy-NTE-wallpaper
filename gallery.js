@@ -30,13 +30,10 @@
 
   function trackDownload(item) {
     if (!GC_BASE || !window.goatcounter?.count) return;
-    // Per-wallpaper event, plus an aggregate event used for the total badge.
-    window.goatcounter.count({
-      path: `download-${item.id}`,
-      title: `Download ${item.id}`,
-      event: true,
-    });
-    window.goatcounter.count({ path: 'download', title: 'Download', event: true });
+    // Recorded as normal paths (not events) so the public counter endpoint can
+    // read them back for the badge; they show under Pages in the dashboard.
+    window.goatcounter.count({ path: `download-${item.id}`, title: `Download ${item.id}` });
+    window.goatcounter.count({ path: 'download', title: 'Download' });
   }
 
   async function counter(path) {

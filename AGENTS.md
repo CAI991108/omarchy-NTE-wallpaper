@@ -93,9 +93,10 @@ The config repo's `install.sh --wallpapers[=<theme>|all]` downloads
 - **Static gallery only**: plain HTML/CSS/JS, no framework, no build step, no backend.
 - **Analytics**: GoatCounter site code `zijincai` in `gallery.js`; `count.js` is vendored
   at `vendor/goatcounter-count.js` (ISC, pinned to v2.7.0) because `gc.zgo.at` is unreachable
-  on some networks. Events are `download-<id>` plus an aggregate `download`; the on-page
-  badge needs “Allow adding visitor counts” in the site settings. An empty
-  `GOATCOUNTER_CODE` disables the script and all requests.
+  on some networks. Download clicks are recorded as normal paths (`download`,
+  `download-<id>`) — not events — so the public counter endpoint can read them back; they
+  show under **Pages** in the dashboard. The badge needs “Allow adding visitor counts”.
+  An empty `GOATCOUNTER_CODE` disables the script and all requests.
 
 ## Done criteria
 
