@@ -91,9 +91,11 @@ The config repo's `install.sh --wallpapers[=<theme>|all]` downloads
 - **No Git LFS.** Images stay in plain git until ~30 images / ~150 MB, then move to
   GitHub Releases (see `docs/adr/`). Removing an image does not shrink history.
 - **Static gallery only**: plain HTML/CSS/JS, no framework, no build step, no backend.
-- **Analytics is opt-in**: `GOATCOUNTER_CODE` at the top of `gallery.js`; empty means no
-  script and no requests. Events are `download-<id>` plus an aggregate `download`; the
-  on-page badge needs “Allow adding visitor counts” in GoatCounter's site settings.
+- **Analytics**: GoatCounter site code `zijincai` in `gallery.js`; `count.js` is vendored
+  at `vendor/goatcounter-count.js` (ISC, pinned to v2.7.0) because `gc.zgo.at` is unreachable
+  on some networks. Events are `download-<id>` plus an aggregate `download`; the on-page
+  badge needs “Allow adding visitor counts” in the site settings. An empty
+  `GOATCOUNTER_CODE` disables the script and all requests.
 
 ## Done criteria
 

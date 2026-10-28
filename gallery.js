@@ -22,10 +22,10 @@
   const fmtMB = (bytes) => `${(bytes / MB).toFixed(1).replace(/\.0$/, '')} MB`;
   const basename = (path) => path.split('/').pop();
 
-  // ── analytics (GoatCounter, optional) ──────────────────────────────────────
-  // Site code from https://www.goatcounter.com/signup (e.g. 'cai991108').
+  // ── analytics (GoatCounter) ────────────────────────────────────────────────
+  // Site code from https://www.goatcounter.com (site: <code>.goatcounter.com).
   // Empty string = analytics fully off: no script tag, no network requests.
-  const GOATCOUNTER_CODE = '';
+  const GOATCOUNTER_CODE = 'zijincai';
   const GC_BASE = GOATCOUNTER_CODE ? `https://${GOATCOUNTER_CODE}.goatcounter.com` : '';
 
   function trackDownload(item) {
@@ -51,9 +51,11 @@
   // settings; if that is off, or the request fails, the badge stays hidden.
   async function showPopularity() {
     if (!GC_BASE || !popularity) return;
+    // Use the exact path count.js recorded; event paths have no leading slash.
+    const pagePath = window.goatcounter?.get_data?.().p || location.pathname;
     const [views, downloads] = await Promise.allSettled([
-      counter(location.pathname),
-      counter('download'),
+      counter(pagePath),
+      counter('download').catch(() => counter('/download')),
     ]);
     const parts = [];
     if (views.status === 'fulfilled') parts.push(`浏览 ${views.value} 次`);
@@ -67,7 +69,8 @@
     if (!GC_BASE) return;
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://gc.zgo.at/count.js';
+    // Vendored same-origin: gc.zgo.at is unreachable on some networks.
+    script.src = 'vendor/goatcounter-count.js';
     script.dataset.goatcounter = `${GC_BASE}/count`;
     script.addEventListener('load', showPopularity);
     document.head.append(script);
