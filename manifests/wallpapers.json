@@ -73,6 +73,48 @@
           "theme": "catppuccin",
           "title": "安魂曲·雨",
           "width": 3648
+        },
+        {
+          "bundled": false,
+          "bytes": 1229083,
+          "credit": "同人二创（@鑰匙君_）",
+          "file": "wallpapers/catppuccin/06-elyms.jpeg",
+          "height": 1404,
+          "id": "06-elyms",
+          "preview": "previews/catppuccin/06-elyms.webp",
+          "sha256": "c659c0bfc84bad5a10cf6de1039ebd81de9862effce9bae873144ab87f53088e",
+          "source": "",
+          "theme": "catppuccin",
+          "title": "曳尔沐",
+          "width": 2208
+        },
+        {
+          "bundled": false,
+          "bytes": 2083487,
+          "credit": "同人二创（@犀牛狂奔八万里）",
+          "file": "wallpapers/catppuccin/07-elyms-billboard.jpeg",
+          "height": 2443,
+          "id": "07-elyms-billboard",
+          "preview": "previews/catppuccin/07-elyms-billboard.webp",
+          "sha256": "a8f7ea9f13173918cc0552ce5220f3beafedca6fe7cc412be45822bccb0f8434",
+          "source": "",
+          "theme": "catppuccin",
+          "title": "曳尔沐·巨幕",
+          "width": 3840
+        },
+        {
+          "bundled": false,
+          "bytes": 2463372,
+          "credit": "同人二创（@空条卜子）",
+          "file": "wallpapers/catppuccin/08-elyms-flower.jpeg",
+          "height": 2152,
+          "id": "08-elyms-flower",
+          "preview": "previews/catppuccin/08-elyms-flower.webp",
+          "sha256": "89931a68196b6e1516e695f7d3a579d2044c7a90b682d0fb1f7967611344d16c",
+          "source": "",
+          "theme": "catppuccin",
+          "title": "曳尔沐·不凋花",
+          "width": 3840
         }
       ]
     },
