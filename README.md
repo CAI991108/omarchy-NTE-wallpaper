@@ -1,18 +1,18 @@
 # omarchy-NTE-wallpaper
 
 <p align="center">
-<strong>NTE wallpapers for Omarchy.</strong> Seven originals, two themes, one command.<br>
-七张《异环》壁纸，两个主题，一条命令装进 Omarchy 的壁纸选择器。
+<strong>NTE wallpapers for Omarchy.</strong> Ten originals, two themes, one command.<br>
+十张《异环》壁纸，两个主题，一条命令装进 Omarchy 的壁纸选择器。
 </p>
 
 <p align="center">
   <a href="https://cai991108.github.io/omarchy-NTE-wallpaper/"><img src="docs/assets/badges/pages.svg" alt="pages: live"></a>
   <a href="LICENSE"><img src="docs/assets/badges/license.svg" alt="license: MIT"></a>
-  <a href="manifests/wallpapers.tsv"><img src="docs/assets/badges/collection.svg" alt="7 wallpapers · 2 themes"></a>
+  <a href="manifests/wallpapers.tsv"><img src="docs/assets/badges/collection.svg" alt="10 wallpapers · 2 themes"></a>
 </p>
 
 <p align="center">
-  <a href="https://cai991108.github.io/omarchy-NTE-wallpaper/"><img src="docs/assets/hero.webp" width="1008" alt="六张壁纸预览：娜娜莉、异环·Q版群像、异环·全家福、娜娜莉·黄昏、娜娜莉·雨、安魂曲·雨"></a>
+  <a href="https://cai991108.github.io/omarchy-NTE-wallpaper/"><img src="docs/assets/hero.webp" width="1008" alt="九张壁纸预览：娜娜莉、异环·Q版群像、异环·全家福、娜娜莉·黄昏、娜娜莉·雨、安魂曲·雨、曳尔沐、曳尔沐·巨幕、曳尔沐·不凋花"></a>
 </p>
 
 ## 安装
@@ -47,7 +47,7 @@ cd ~/omarchy-NTE && ./install.sh --wallpapers=catppuccin
 
 | 主题目录 | 张数 | 分辨率 | 内容 |
 |---|---|---|---|
-| `catppuccin` | 5 | 4199×2362 · 3648×2496 | 娜娜莉系列 4 张 + 安魂曲·雨 |
+| `catppuccin` | 8 | 4199×2362 · 3840×2443 · 3648×2496 · 2208×1404 | 娜娜莉系列 4 张 + 安魂曲·雨 + 曳尔沐 3 张 |
 | `catppuccin-latte` | 2 | 3840×2160 | 异环官方 16:9 全家福与 Q 版群像 |
 
 装好后按 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Space</kbd> 在桌面端切换（Omarchy 3.8.2；4.x 为 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>W</kbd>）。
@@ -71,10 +71,13 @@ omarchy-NTE/install.sh --wallpapers=catppuccin
 
 ## 素材来源
 
-7 张壁纸的版权均归原作者 / 发行方，**不在代码的 MIT 许可范围内**。
+10 张壁纸的版权均归原作者 / 发行方，**不在代码的 MIT 许可范围内**。
 
 - **2 张**取自《异环》官方发布（`01-nte-chibi`、`02-nte-sakura`），出处见 [CREDITS.md](CREDITS.md)。
-- **5 张**是同人二创（娜娜莉系列与安魂曲·雨），原作者未知、未获授权，仅作个人桌面使用收录。**收到权利人请求会立即删除对应文件**，无需解释。
+- **5 张**是同人二创（娜娜莉系列与安魂曲·雨），原作者未知、未获授权，仅作个人桌面使用收录。
+- **3 张**曳尔沐（`06`–`08`）是同人二创，来自《异环》官微 2026-11-10 的同人绘画展示（官方注明已获作者授权），署名按画面水印记录。
+
+**收到权利人请求会立即删除对应文件**，无需解释。
 
 逐张作者与来源见 [CREDITS.md](CREDITS.md)。
 
